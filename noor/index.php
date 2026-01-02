@@ -20,8 +20,9 @@ try {
     $router->dispatch($page, $action);
 } catch (Exception $e) {
     // Fallback error display
+    error_log("System Error: " . $e->getMessage());
     echo '<div style="color:red; text-align:center; padding:50px; font-family:sans-serif;">';
     echo '<h1>System Error</h1>';
-    echo '<p>' . htmlspecialchars($e->getMessage()) . '</p>';
+    echo '<p>An unexpected error occurred. Please try again later.</p>';
     echo '</div>';
 }
