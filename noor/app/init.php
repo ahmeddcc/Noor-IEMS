@@ -59,3 +59,12 @@ set_exception_handler(function($exception) {
 
 // 4. Start Session if not started
 \App\Core\Session::start();
+
+// 5. Centralized Security Headers
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('X-XSS-Protection: 1; mode=block');
+header('Referrer-Policy: strict-origin-when-cross-origin');
+header('Permissions-Policy: geolocation=(), microphone=(), camera=()');
+// Modern Clickjacking Protection
+header("Content-Security-Policy: frame-ancestors 'none';");
