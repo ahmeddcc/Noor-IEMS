@@ -1111,13 +1111,24 @@ function loadCategoryGrid() {
                 result.data.forEach(cat => {
                     const card = document.createElement('div');
                     card.className = 'category-card';
-                    card.innerHTML = `
-                        <i class="fas fa-tag"></i>
-                        <span>${cat.name}</span>
-                        <button class="delete-cat-btn" onclick="event.stopPropagation(); deleteCategoryItem(${cat.id})">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
+                    // Safe DOM Construction
+                    const icon = document.createElement('i');
+                    icon.className = 'fas fa-tag';
+
+                    const span = document.createElement('span');
+                    span.textContent = cat.name;
+
+                    const btn = document.createElement('button');
+                    btn.className = 'delete-cat-btn';
+                    btn.innerHTML = '<i class="fas fa-trash"></i>'; // innerHTML here is safe as it's static
+                    btn.onclick = (e) => {
+                        e.stopPropagation();
+                        deleteCategoryItem(cat.id);
+                    };
+
+                    card.appendChild(icon);
+                    card.appendChild(span);
+                    card.appendChild(btn);
                     card.onclick = () => selectCategory(cat.id, cat.name);
                     grid.appendChild(card);
                 });
