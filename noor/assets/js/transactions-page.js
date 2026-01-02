@@ -846,7 +846,14 @@ function showToast(icon, msg, type) {
     toast.style.borderRadius = '8px';
     toast.style.zIndex = '3000';
     toast.style.border = type === 'success' ? '1px solid #2ecc71' : '1px solid #e74c3c';
-    toast.innerHTML = `<i class="bi ${icon}"></i> ${msg}`;
+    // Safe DOM construction
+    const iconEl = document.createElement('i');
+    iconEl.className = `bi ${icon}`;
+
+    const msgNode = document.createTextNode(` ${msg}`);
+
+    toast.appendChild(iconEl);
+    toast.appendChild(msgNode);
 
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
