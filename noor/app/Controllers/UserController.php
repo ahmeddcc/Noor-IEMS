@@ -106,6 +106,12 @@ class UserController {
         if (!in_array($role, ['admin', 'manager', 'user'])) {
             $role = 'user';
         }
+
+        // التحقق من كلمة المرور (للمستخدم الجديد)
+        if (!$id && empty($password)) {
+            echo json_encode(['success' => false, 'message' => 'كلمة المرور مطلوبة للمستخدم الجديد']);
+            exit;
+        }
         
         // بدء Transaction
         $pdo = \App\Core\Database::getInstance()->getConnection();
@@ -129,10 +135,6 @@ class UserController {
                 $userId = $id;
             } else {
                 // إضافة
-                if (empty($password)) {
-                    throw new \Exception('كلمة المرور مطلوبة للمستخدم الجديد');
-                }
-                
                 $userId = $this->userModel->create([
                     'username' => $username,
                     'password' => $password,
@@ -165,7 +167,9 @@ class UserController {
             if ($pdo->inTransaction()) {
                 $pdo->rollBack();
             }
-            echo json_encode(['success' => false, 'message' => 'حدث خطأ: ' . $e->getMessage()]);
+            // Log error internally to avoid information exposure
+            error_log('UserController Save Error: ' . $e->getMessage());
+            echo json_encode(['success' => false, 'message' => 'حدث خطأ غير متوقع أثناء حفظ البيانات']);
         }
         
         exit;
