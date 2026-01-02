@@ -1,0 +1,825 @@
+/* 
+ * Light Mode Theme - تصميم نهاري احترافي
+ * تصميم مختلف تماماً عن الوضع الليلي
+ * ألوان هادئة ونظيفة بدون تأثيرات Neon
+ * استخدام !important للتغلب على main.css
+ */
+
+/* ===== CORE BODY OVERRIDE ===== */
+body.light-mode {
+    --bg-primary: #f8fafc !important;
+    --bg-secondary: #ffffff !important;
+    --bg-header: #ffffff !important;
+    --bg-hover: #f1f5f9 !important;
+    --text-primary: #1e293b !important;
+    --text-secondary: #475569 !important;
+    --text-muted: #94a3b8 !important;
+    --accent-green: #10b981 !important;
+    --accent-red: #ef4444 !important;
+    --accent-orange: #f59e0b !important;
+    --accent-blue: #3b82f6 !important;
+    --accent-cyan: #06b6d4 !important;
+    --border-light: #e2e8f0 !important;
+    --border-medium: #cbd5e1 !important;
+
+    background: #f1f5f9 !important;
+    background-image: none !important;
+    color: #1e293b !important;
+}
+
+body.light-mode::before,
+body.light-mode::after {
+    display: none !important;
+}
+
+/* ===== APP CONTAINER ===== */
+body.light-mode .app-container {
+    background: #f1f5f9 !important;
+}
+
+body.light-mode .main-content {
+    background: transparent !important;
+}
+
+body.light-mode .content-wrapper {
+    background: transparent !important;
+}
+
+/* ===== CYBER HEADER - WHITE SOLID ===== */
+body.light-mode .cyber-header-container {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+}
+
+body.light-mode .cyber-trip {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+    backdrop-filter: none !important;
+}
+
+/* Logo */
+body.light-mode .logo-text {
+    color: #1e293b !important;
+    text-shadow: none !important;
+    background: none !important;
+    -webkit-text-fill-color: #1e293b !important;
+}
+
+body.light-mode .fish-icon path,
+body.light-mode .fish-icon circle {
+    stroke: #3b82f6 !important;
+    fill: #3b82f6 !important;
+}
+
+body.light-mode .fish-icon {
+    filter: none !important;
+}
+
+/* Separator */
+body.light-mode .v-separator {
+    background: #e2e8f0 !important;
+}
+
+/* ===== NAVIGATION ===== */
+body.light-mode .nav-item {
+    color: #475569 !important;
+    background: transparent !important;
+}
+
+body.light-mode .nav-item:hover,
+body.light-mode .nav-item.active {
+    color: #1e293b !important;
+    background: #f1f5f9 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .nav-item i {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: inherit !important;
+    filter: none !important;
+    color: inherit !important;
+}
+
+body.light-mode .nav-item.active i {
+    color: var(--neon-color, #3b82f6) !important;
+}
+
+body.light-mode .nav-label {
+    color: inherit !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .dock-svg,
+body.light-mode .dock-rect {
+    display: none !important;
+}
+
+/* ===== USER SECTION ===== */
+body.light-mode .user-name {
+    color: #1e293b !important;
+}
+
+body.light-mode .user-role-badge {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #3b82f6 !important;
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Theme Toggle */
+body.light-mode .theme-toggle-btn {
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #3b82f6 !important;
+}
+
+body.light-mode .theme-toggle-btn:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+    border-color: #3b82f6 !important;
+    box-shadow: none !important;
+    transform: scale(1.05) !important;
+}
+
+/* Logout */
+body.light-mode .logout-btn {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+    color: #ef4444 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .logout-btn:hover {
+    background: #ef4444 !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* ===== STAT CARDS ===== */
+body.light-mode .stat-card-neon,
+body.light-mode .stat-card,
+body.light-mode .quick-stat-item {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+    animation: none !important;
+}
+
+body.light-mode .stat-card-neon::before {
+    height: 4px !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .stat-card-neon::after {
+    display: none !important;
+}
+
+body.light-mode .stat-card-neon:hover,
+body.light-mode .stat-card:hover {
+    background: #ffffff !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    border-color: #cbd5e1 !important;
+    animation: none !important;
+}
+
+/* Stat Card Top Bars */
+body.light-mode .stat-card-neon.income::before {
+    background: #10b981 !important;
+}
+
+body.light-mode .stat-card-neon.expense::before {
+    background: #ef4444 !important;
+}
+
+body.light-mode .stat-card-neon.advance::before {
+    background: #f59e0b !important;
+}
+
+body.light-mode .stat-card-neon.net.positive::before {
+    background: #06b6d4 !important;
+}
+
+body.light-mode .stat-card-neon.net.negative::before {
+    background: #ef4444 !important;
+}
+
+/* Stat Icons */
+body.light-mode .stat-icon {
+    background: transparent !important;
+    border: none !important;
+}
+
+body.light-mode .stat-card-neon.income .stat-icon {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+body.light-mode .stat-card-neon.income .stat-icon i {
+    color: #10b981 !important;
+    filter: none !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .stat-card-neon.expense .stat-icon {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+body.light-mode .stat-card-neon.expense .stat-icon i {
+    color: #ef4444 !important;
+    filter: none !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .stat-card-neon.advance .stat-icon {
+    background: rgba(245, 158, 11, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+body.light-mode .stat-card-neon.advance .stat-icon i {
+    color: #f59e0b !important;
+    filter: none !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .stat-card-neon.net .stat-icon {
+    background: rgba(6, 182, 212, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+body.light-mode .stat-card-neon.net .stat-icon i {
+    color: #06b6d4 !important;
+    filter: none !important;
+    text-shadow: none !important;
+}
+
+/* Stat Content */
+body.light-mode .stat-content .stat-label {
+    color: #94a3b8 !important;
+}
+
+body.light-mode .stat-content .stat-value {
+    color: #1e293b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .quick-stat-value {
+    color: #1e293b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .quick-stat-label {
+    color: #64748b !important;
+}
+
+body.light-mode .quick-stat-item i {
+    filter: none !important;
+}
+
+/* ===== FILTER BAR ===== */
+body.light-mode .filter-bar-neon {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+}
+
+body.light-mode .filter-input-neon,
+body.light-mode .search-input-neon,
+body.light-mode input[type="text"],
+body.light-mode input[type="number"],
+body.light-mode input[type="date"],
+body.light-mode select {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    border-radius: 8px !important;
+}
+
+body.light-mode .filter-input-neon:focus,
+body.light-mode .search-input-neon:focus,
+body.light-mode input:focus,
+body.light-mode select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    outline: none !important;
+}
+
+body.light-mode .filter-input-neon::placeholder,
+body.light-mode input::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.light-mode .search-icon {
+    color: #94a3b8 !important;
+}
+
+/* Filter Buttons */
+body.light-mode .filter-btn-neon,
+body.light-mode .neon-tool-btn {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .filter-btn-neon:hover,
+body.light-mode .neon-tool-btn:hover {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+}
+
+/* Transaction Action Buttons */
+body.light-mode .btn-trans-action.income {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    color: #10b981 !important;
+}
+
+body.light-mode .btn-trans-action.income:hover {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+body.light-mode .btn-trans-action.expense {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+}
+
+body.light-mode .btn-trans-action.expense:hover {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+body.light-mode .btn-trans-action.advance {
+    background: rgba(245, 158, 11, 0.1) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    color: #f59e0b !important;
+}
+
+body.light-mode .btn-trans-action.advance:hover {
+    background: #f59e0b !important;
+    color: white !important;
+}
+
+/* ===== TABLE ===== */
+body.light-mode .table-container-neon {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+}
+
+body.light-mode .transactions-table {
+    background: transparent !important;
+}
+
+body.light-mode .transactions-table th {
+    background: #f8fafc !important;
+    color: #475569 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .transactions-table td {
+    color: #1e293b !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body.light-mode .transactions-table tbody tr {
+    background: #ffffff !important;
+}
+
+body.light-mode .transactions-table tbody tr:hover {
+    background: #f8fafc !important;
+}
+
+/* Type Badges */
+body.light-mode .type-badge.income {
+    background: rgba(16, 185, 129, 0.1) !important;
+    color: #10b981 !important;
+}
+
+body.light-mode .type-badge.expense {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+}
+
+body.light-mode .type-badge.advance {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: #f59e0b !important;
+}
+
+/* Amount Colors */
+body.light-mode .amount-cell.income .amount-value {
+    color: #10b981 !important;
+}
+
+body.light-mode .amount-cell.expense .amount-value {
+    color: #ef4444 !important;
+}
+
+/* Client Link */
+body.light-mode .client-link-neon {
+    color: #3b82f6 !important;
+}
+
+body.light-mode .client-link-neon:hover {
+    color: #2563eb !important;
+}
+
+/* Table Action Buttons */
+body.light-mode .action-btn-neon {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .action-btn-neon.edit {
+    color: #f59e0b !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+body.light-mode .action-btn-neon.edit:hover {
+    background: #f59e0b !important;
+    color: white !important;
+}
+
+body.light-mode .action-btn-neon.delete {
+    color: #ef4444 !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+body.light-mode .action-btn-neon.delete:hover {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+body.light-mode .action-btn-neon.repay {
+    color: #10b981 !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+body.light-mode .action-btn-neon.repay:hover {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+/* ===== PAGINATION ===== */
+body.light-mode .page-link {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .page-link:hover {
+    background: #f1f5f9 !important;
+    color: #1e293b !important;
+}
+
+body.light-mode .page-link.active {
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* ===== MODALS ===== */
+body.light-mode .modal-overlay {
+    background: rgba(15, 23, 42, 0.5) !important;
+}
+
+body.light-mode .modal-container,
+body.light-mode .modal-content,
+body.light-mode .modern-modal {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    color: #1e293b !important;
+}
+
+body.light-mode .modal-header-neon {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .modal-title {
+    color: #1e293b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .modal-close {
+    color: #94a3b8 !important;
+    background: transparent !important;
+}
+
+body.light-mode .modal-close:hover {
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Modal Inputs */
+body.light-mode .trans-input,
+body.light-mode .modal-container input,
+body.light-mode .modal-container select,
+body.light-mode .modal-container textarea {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+}
+
+body.light-mode .trans-label {
+    color: #475569 !important;
+}
+
+/* ===== QUICK REPAY & DEBT MODALS ===== */
+body.light-mode .quick-repay-modal,
+body.light-mode .debt-confirm-modal {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .quick-repay-title {
+    color: #f59e0b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .debt-confirm-title {
+    color: #3b82f6 !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .quick-repay-info,
+body.light-mode .debt-confirm-info {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .repay-info-label,
+body.light-mode .debt-info-label {
+    color: #64748b !important;
+}
+
+body.light-mode .repay-info-value,
+body.light-mode .debt-info-value {
+    color: #1e293b !important;
+}
+
+body.light-mode .quick-repay-icon,
+body.light-mode .debt-confirm-icon {
+    background: rgba(245, 158, 11, 0.1) !important;
+    border-color: rgba(245, 158, 11, 0.2) !important;
+}
+
+body.light-mode .quick-repay-icon i {
+    color: #f59e0b !important;
+    filter: none !important;
+}
+
+body.light-mode .repay-amount-box {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .repay-amount-box:focus-within {
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1) !important;
+}
+
+body.light-mode .repay-currency-prefix {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: #f59e0b !important;
+}
+
+body.light-mode .repay-amount-box input {
+    color: #1e293b !important;
+}
+
+body.light-mode .btn-repay-submit,
+body.light-mode .btn-debt-accept {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    color: #10b981 !important;
+}
+
+body.light-mode .btn-repay-submit:hover,
+body.light-mode .btn-debt-accept:hover {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+body.light-mode .btn-repay-cancel,
+body.light-mode .btn-debt-reject {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
+}
+
+body.light-mode .btn-repay-cancel:hover,
+body.light-mode .btn-debt-reject:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+}
+
+/* ===== CARDS & PANELS ===== */
+body.light-mode .card,
+body.light-mode .dashboard-stats .stat-card,
+body.light-mode .chart-card,
+body.light-mode .transactions-card,
+body.light-mode .dashboard-header {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+    color: #1e293b !important;
+}
+
+body.light-mode .card::before,
+body.light-mode .card::after,
+body.light-mode .stat-card::before,
+body.light-mode .stat-card::after {
+    display: none !important;
+}
+
+/* ===== TYPOGRAPHY ===== */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+    color: #1e293b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .stat-amount {
+    color: #1e293b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode p,
+body.light-mode span,
+body.light-mode label {
+    color: inherit !important;
+}
+
+/* ===== ALERTS ===== */
+body.light-mode .alert {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .alert-success {
+    border-left: 4px solid #10b981 !important;
+    color: #10b981 !important;
+}
+
+body.light-mode .alert-error {
+    border-left: 4px solid #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+/* ===== TOAST ===== */
+body.light-mode .toast {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===== DASHBOARD SPECIFIC ===== */
+body.light-mode .dashboard-card,
+body.light-mode .chart-container {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .dashboard-title,
+body.light-mode .chart-title {
+    color: #1e293b !important;
+}
+
+/* ===== MOBILE CARDS ===== */
+body.light-mode .transaction-card-mobile {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .card-header-mobile {
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body.light-mode .card-client-name {
+    color: #1e293b !important;
+}
+
+/* ===== SCROLLBAR ===== */
+body.light-mode ::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+body.light-mode ::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+    background: #cbd5e1 !important;
+    border-radius: 4px !important;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8 !important;
+}
+
+/* ===== PAGE TITLE SECTION ===== */
+body.light-mode .page-title-section {
+    background: transparent !important;
+}
+
+body.light-mode .page-title {
+    color: #1e293b !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .page-subtitle {
+    color: #64748b !important;
+}
+
+/* ===== PAYMENT BADGE ===== */
+body.light-mode .payment-badge {
+    background: #f1f5f9 !important;
+    color: #475569 !important;
+}
+
+/* ===== NOTES CELL ===== */
+body.light-mode .notes-cell span {
+    color: #64748b !important;
+}
+
+/* ===== CLIENT CARDS ===== */
+body.light-mode .client-card-modern {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .client-name-link {
+    color: #1e293b !important;
+}
+
+/* ===== THEME TOGGLE BUTTON (Global) ===== */
+.theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fbbf24;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(251, 191, 36, 0.2);
+    transform: scale(1.1);
+}
+
+@keyframes iconSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.theme-toggle-btn.switching i {
+    animation: iconSpin 0.4s ease;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    body.light-mode {
+        background: white !important;
+    }
+}

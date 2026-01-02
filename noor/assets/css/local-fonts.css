@@ -1,0 +1,31 @@
+/* ===================================================
+ * Local Fonts - Cairo Arabic Font
+ * استضافة محلية للخطوط - بديل عن Google Fonts
+ * =================================================== */
+
+/* Cairo Regular (400) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/Cairo-Regular.ttf') format('truetype');
+}
+
+/* Cairo SemiBold (600) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/Cairo-SemiBold.ttf') format('truetype');
+}
+
+/* Cairo Bold (700) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/Cairo-Bold.ttf') format('truetype');
+}

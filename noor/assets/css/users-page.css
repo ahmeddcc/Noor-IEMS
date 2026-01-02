@@ -1,0 +1,542 @@
+/* ===================================================
+ * Users Page Styles - Neon Glass Design
+ * =================================================== */
+
+/* User Modal Styles */
+.user-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+}
+
+.user-modal {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    width: 95%;
+    max-width: 1300px;
+    max-height: 95vh;
+    overflow-y: visible;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(168, 85, 247, 0.1);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+}
+
+.user-modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.user-modal-title i {
+    color: #a855f7;
+    filter: drop-shadow(0 0 8px #a855f7);
+}
+
+.user-modal-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.user-modal-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.user-modal-body {
+    padding: 25px;
+}
+
+.user-form-group {
+    margin-bottom: 20px;
+}
+
+.user-form-group label {
+    display: block;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.user-form-group label .required {
+    color: #ef4444;
+}
+
+.user-form-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.user-form-input:focus {
+    outline: none;
+    border-color: #a855f7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.user-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 500px) {.user-form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+}
+
+.user-form-row-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .user-form-row-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .user-form-row-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.user-modal-footer {
+    padding: 20px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-user-cancel {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-user-cancel:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-user-save {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-user-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Role Badges */
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.role-badge.role-admin {
+    background: rgba(244, 63, 94, 0.2);
+    color: #f43f5e;
+    border: 1px solid rgba(244, 63, 94, 0.5);
+}
+
+.role-badge.role-manager {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.5);
+}
+
+.role-badge.role-user {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.5);
+}
+
+/* User Avatar */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.user-avatar {
+    font-size: 1.8rem;
+    color: #06b6d4;
+    filter: drop-shadow(0 0 5px #06b6d4);
+}
+
+/* Permissions Section */
+.permissions-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.permissions-section h4 {
+    margin: 0 0 15px;
+    color: #06b6d4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.permission-category {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.category-header {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.category-toggle input {
+    width: 16px;
+    height: 16px;
+    accent-color: #06b6d4;
+}
+
+.category-permissions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.permission-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.permission-item:hover {
+    color: #fff;
+}
+
+.permission-item input {
+    width: 14px;
+    height: 14px;
+    accent-color: #10b981;
+}
+
+@media (max-width: 900px) {
+    .permissions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .permissions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Picker Button ===== */
+.picker-btn {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.picker-btn:hover {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.picker-btn i {
+    display: none;
+}
+
+/* ===== Picker Popup Overlay ===== */
+.picker-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 10001;
+    justify-content: center;
+    align-items: center;
+}
+
+.picker-popup {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: 20px;
+    width: 95%;
+    max-width: 500px;
+    padding: 25px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(168, 85, 247, 0.15);
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {from {
+    opacity: 0;
+    transform: scale(0.9);
+}to {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+
+.picker-popup-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.picker-popup-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.picker-popup-header h3 i {
+    color: #a855f7;
+}
+
+/* ===== Picker Grid ===== */
+.picker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.picker-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.picker-card {
+    padding: 20px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.picker-card:hover {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.5);
+    transform: translateY(-3px);
+}
+
+.picker-card.selected {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(124, 58, 237, 0.2));
+    border-color: #a855f7;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+}
+
+.picker-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.picker-card-name {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.picker-card-desc {
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+/* Status Card Colors */
+.picker-card.status-active:hover,
+.picker-card.status-active.selected {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.picker-card.status-inactive:hover,
+.picker-card.status-inactive.selected {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.picker-popup-close {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.picker-popup-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* ===== Custom Confirm Modal ===== */
+.confirm-popup {
+    max-width: 400px;
+    text-align: center;
+}
+
+.confirm-body {
+    padding: 20px 0;
+}
+
+.confirm-body p {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.btn-confirm-cancel {
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-confirm-cancel:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btn-confirm-ok {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.btn-confirm-ok:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+}

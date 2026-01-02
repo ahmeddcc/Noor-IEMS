@@ -1,0 +1,485 @@
+/* ===== صفحة تسجيل الدخول - Glass Ocean Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+
+/* ===== CSS Variables ===== */
+:root {
+    --bg-deep: #020617;
+    --bg-dark: #0a1628;
+    --glass-bg: rgba(10, 22, 40, 0.85);
+    --glass-border: rgba(6, 182, 212, 0.4);
+    --neon-cyan: #06b6d4;
+    --neon-cyan-light: #22d3ee;
+    --neon-blue: #0ea5e9;
+    --text-white: #ffffff;
+    --text-light: #94a3b8;
+    --text-muted: #64748b;
+    --input-bg: rgba(15, 23, 42, 0.8);
+    --input-border: rgba(6, 182, 212, 0.5);
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Login Page ===== */
+.login-page {
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,
+            #020617 0%,
+            #0a1628 40%,
+            #0c1929 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== Ocean Background with Waves ===== */
+.ocean-bg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== Natural Wave Animation ===== */
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.wave-parallax>use {
+    animation: wave-move infinite linear;
+}
+
+.wave-parallax>use:nth-child(1) {
+    animation-duration: 7s;
+    animation-delay: 0s;
+    opacity: 0.7;
+}
+
+.wave-parallax>use:nth-child(2) {
+    animation-duration: 10s;
+    animation-delay: -2s;
+    opacity: 0.5;
+}
+
+.wave-parallax>use:nth-child(3) {
+    animation-duration: 13s;
+    animation-delay: -4s;
+    opacity: 0.3;
+}
+
+.wave-parallax>use:nth-child(4) {
+    animation-duration: 20s;
+    animation-delay: -5s;
+    opacity: 0.2;
+}
+
+@keyframes wave-move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ===== Glass Card ===== */
+.glass-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px;
+    padding: 45px 38px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 2px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow:
+        0 0 50px rgba(6, 182, 212, 0.2),
+        0 0 100px rgba(6, 182, 212, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: cardFloat 0.8s ease-out;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+/* Snake Laser Border SVG */
+.card-border-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+}
+
+.laser-line {
+    fill: none;
+    stroke: #38bdf8;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 150 1690;
+    stroke-dashoffset: 1840;
+    opacity: 0;
+    filter: drop-shadow(0 0 8px #38bdf8) drop-shadow(0 0 16px #0ea5e9);
+    transition: opacity 0.4s ease;
+}
+
+.glass-card:hover .laser-line {
+    opacity: 1;
+    animation: snakeRunCard 8s linear infinite;
+}
+
+.glass-card:hover {
+    box-shadow:
+        0 0 40px rgba(6, 182, 212, 0.3),
+        0 0 80px rgba(6, 182, 212, 0.15);
+}
+
+@keyframes snakeRunCard {
+    0% {
+        stroke-dashoffset: 1840;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes cardFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Logo Section ===== */
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.logo-wrapper {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6)) drop-shadow(0 0 60px rgba(6, 182, 212, 0.3));
+    animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6)) drop-shadow(0 0 60px rgba(6, 182, 212, 0.3));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 40px rgba(6, 182, 212, 0.8)) drop-shadow(0 0 80px rgba(6, 182, 212, 0.5));
+    }
+}
+
+.logo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ===== Title Section ===== */
+.title-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-cyan-light);
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.6),
+        0 0 20px rgba(34, 211, 238, 0.4),
+        0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+.sub-title {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* ===== Alert Messages ===== */
+.alert {
+    padding: 14px 16px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.5s ease;
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: var(--error-color);
+}
+
+.alert-warning {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: var(--warning-color);
+}
+
+/* ===== Form Styles ===== */
+.login-form {
+    margin-bottom: 25px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 50px;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: var(--text-light);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+.input-group .input-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--neon-cyan);
+    font-size: 1.1rem;
+}
+
+/* ===== Submit Button ===== */
+.btn-submit {
+    width: 100%;
+    padding: 18px 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(6, 182, 212, 0.45);
+}
+
+.btn-submit:active {
+    transform: translateY(-1px);
+}
+
+.btn-submit.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* ===== Card Footer ===== */
+.card-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.card-footer .copyright {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ===== Responsive Design ===== */
+
+/* Small Tablets (768px and below) */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        height: 100%;
+        overflow: auto;
+    }
+}
+
+/* Large Phones (480px and below) */
+@media (max-width: 480px) {
+    .login-page {
+        padding: 10px;
+    }
+
+    .glass-card {
+        padding: 35px 25px;
+        margin: 15px;
+    }
+
+    .logo-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .main-title {
+        font-size: 1.3rem;
+    }
+
+    .input-group .input-icon {
+        font-size: 1rem;
+    }
+
+    .wave-parallax>use {
+        animation: none;
+    }
+
+    .laser-line {
+        stroke-width: 2;
+    }
+}
+
+/* Small Phones (360px and below) */
+@media (max-width: 360px) {
+    .main-title {
+        font-size: 1.1rem;
+    }
+
+    .sub-title {
+        font-size: 0.85rem;
+    }
+
+    .input-group input {
+        padding: 14px 44px 14px 14px;
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        padding: 14px 18px;
+        font-size: 1rem;
+    }
+
+    .card-footer .copyright {
+        font-size: 0.75rem;
+    }
+}
+
+/* ===== Performance Optimizations ===== */
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .login-page,
+    .waves,
+    .wave-parallax>use,
+    .glass-card,
+    .logo-wrapper,
+    .laser-line {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* GPU acceleration hints for animations */
+.waves,
+.wave-parallax>use,
+.laser-line,
+.logo-wrapper {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Optimize filters on hover only */
+.glass-card:not(:hover) .laser-line {
+    filter: none;
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .glass-card {
+        max-width: 100%;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 20px;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .logo-wrapper {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .title-section {
+        margin-bottom: 20px;
+    }
+
+    .ocean-bg {
+        height: 20%;
+        display: none;
+    }
+}

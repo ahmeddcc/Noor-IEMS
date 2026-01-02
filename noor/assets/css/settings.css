@@ -1,0 +1,820 @@
+/* assets/css/settings.css */
+
+/* =========================================
+   SETTINGS PAGE - UNIFIED GLASS THEME
+   ========================================= */
+
+:root {
+    --neon-cyan: #06b6d4;
+    --neon-purple: #8b5cf6;
+    --neon-pink: #f472b6;
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: 16px;
+}
+
+/* 1. Page Header (Matches .neon-hero-header) */
+.neon-settings-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--neon-cyan);
+    /* Active Theme Color */
+    border-radius: 16px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 0 20px rgba(6, 182, 212, 0.2),
+        inset 0 0 20px rgba(6, 182, 212, 0.05);
+}
+
+.neon-settings-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: skewX(-20deg);
+    animation: headerSheen 6s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes headerSheen {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+.neon-settings-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.neon-settings-header h1 i {
+    color: var(--neon-cyan);
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+    font-size: 1.8rem;
+}
+
+/* 2. Main Container */
+.settings-container {
+    display: flex;
+    gap: 30px;
+    min-height: calc(100vh - 200px);
+}
+
+/* 3. Sidebar Navigation */
+.settings-sidebar {
+    width: 240px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding-right: 22px;
+    /* Slight slide effect */
+}
+
+.sidebar-item i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.sidebar-item.active {
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.2), transparent);
+    color: #fff;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+}
+
+.sidebar-item.active i {
+    color: var(--neon-cyan);
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+    transform: scale(1.1);
+}
+
+
+
+
+/* 4. Content Area */
+.settings-content {
+    flex: 1;
+}
+
+.settings-section {
+    display: none;
+    animation: fadeScale 0.4s ease-out;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.98) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* 5. Settings Card (Glass Panel) */
+.settings-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.settings-card h2 {
+    margin: 0 0 25px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 6. Forms & Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.add-category-form input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.add-category-form input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    background: rgba(6, 182, 212, 0.05);
+    /* Tint */
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 7. Buttons (Neon Style) */
+.btn-neon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.btn-neon.primary {
+    background: linear-gradient(135deg, var(--neon-cyan), #0ea5e9);
+    color: white;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.btn-neon.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-neon.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-neon.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-neon.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-neon.success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+/* 8. Toggle Switches */
+.toggle-group h3 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.toggle-row {
+    display: flex;
+    gap: 20px;
+}
+
+.toggle-item {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-switch {
+    width: 48px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.toggle-switch.active {
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+.toggle-switch.active::after {
+    transform: translateX(22px);
+}
+
+/* 9. Categories Grid Cards (Matches Audit Cards) */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.add-category-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.add-category-form input {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.add-category-form .btn-neon.success {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.category-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(6, 182, 212, 0.2);
+}
+
+/* Drag Handle */
+.drag-handle {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: grab;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 0.7rem;
+}
+
+.drag-handle:hover {
+    color: var(--neon-cyan);
+    background: rgba(6, 182, 212, 0.1);
+}
+
+.category-card {
+    position: relative;
+}
+
+/* Drag and Drop States */
+.category-card.dragging {
+    opacity: 0.5;
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(6, 182, 212, 0.4);
+    border-color: var(--neon-cyan);
+    z-index: 100;
+}
+
+.category-card.drag-over {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.category-card[draggable="true"] {
+    cursor: grab;
+}
+
+.category-card[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+.category-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--neon-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: inset 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.category-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.category-card.disabled {
+    opacity: 0.7;
+    filter: grayscale(0.8);
+}
+
+.category-card.disabled:hover {
+    filter: none;
+    opacity: 1;
+}
+
+.badge-active {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+}
+
+.badge-disabled {
+    color: #f43f5e;
+    background: rgba(244, 63, 94, 0.1);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+}
+
+.badge-protected {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.badge-protected i {
+    font-size: 0.6rem;
+}
+
+.btn-card-action {
+    margin-top: auto;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-card-action i {
+    font-size: 0.65rem;
+}
+
+.btn-card-action.warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.btn-card-action.warning:hover {
+    background: rgba(245, 158, 11, 0.2);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.btn-card-action.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.btn-card-action.success:hover {
+    background: rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.btn-card-action.edit {
+    background: rgba(6, 182, 212, 0.1);
+    color: #06b6d4;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    cursor: pointer;
+}
+
+.btn-card-action.edit:hover {
+    background: rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.btn-card-action.danger {
+    background: rgba(244, 63, 94, 0.1);
+    color: #f43f5e;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.btn-card-action.danger:hover {
+    background: rgba(244, 63, 94, 0.2);
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
+}
+
+/* Category Actions Group */
+.category-actions-group {
+    display: flex;
+    gap: 4px;
+    margin-top: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 10. Status Badges & Tables */
+.status-row {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-badge-connected {
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+/* Neon Data Table */
+.neon-data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.neon-data-table thead th {
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.neon-data-table tbody tr {
+    background: rgba(255, 255, 255, 0.03);
+    transition: 0.3s;
+}
+
+.neon-data-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.01);
+}
+
+.neon-data-table td {
+    padding: 15px;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-data-table td:first-child {
+    border-radius: 0 10px 10px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-data-table td:last-child {
+    border-radius: 10px 0 0 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Buttons SM */
+.btn-sm {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.btn-info {
+    background: rgba(6, 182, 212, 0.2);
+    color: #06b6d4;
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.btn-info:hover {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+}
+
+/* Backup Info Box */
+.backup-info {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    color: #fcd34d;
+}
+
+.backup-info code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #fbbf24;
+}
+
+@media (max-width: 1400px) {
+    .categories-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .categories-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .settings-container {
+        flex-direction: column;
+    }
+
+    .settings-sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        position: static;
+    }
+
+    .sidebar-item {
+        padding: 10px;
+        flex-shrink: 0;
+    }
+
+    .sidebar-item span {
+        display: none;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Show icons only on mobile for compact navbar */
+}
+
+/* 11. Custom Confirmation Modal */
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    /* Darker overlay */
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(6, 182, 212, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.custom-modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f59e0b;
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4));
+}
+
+.modal-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-message {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-modal {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-modal.confirm {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.btn-modal.confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+}
+
+.btn-modal.cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-modal.cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

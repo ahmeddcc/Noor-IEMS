@@ -1,0 +1,209 @@
+/* ===================================================
+ * Transactions Themes CSS - Auto Split
+ * Income (Green), Expense (Red), Advance (Orange)
+ * =================================================== */
+
+/* =========================================
+   🟢 INCOME MODAL - EMERALD THEME (#10b981)
+   ========================================= */
+.trans-modal.income {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.15) !important;
+}
+
+.trans-modal.income .trans-modal-header {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+.trans-modal.income .trans-title-icon {
+    color: #10b981 !important;
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important;
+}
+
+.trans-modal.income .trans-field label {
+    color: #10b981 !important;
+}
+
+.trans-modal.income .trans-type-tab.active {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+}
+
+.trans-modal.income .trans-input:focus,
+.trans-modal.income .trans-textarea:focus {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+.trans-modal.income .trans-amount-box:focus-within,
+.trans-modal.income .trans-input-group:focus-within {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.12) !important;
+}
+
+.trans-modal.income .trans-payment-btn input:checked+span {
+    background: rgba(16, 185, 129, 0.2) !important;
+    color: #10b981 !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.trans-modal.income .trans-footer-btn {
+    border: 1px solid rgba(16, 185, 129, 0.25) !important;
+    background: rgba(16, 185, 129, 0.1) !important;
+}
+
+.trans-modal.income .trans-footer-btn:hover {
+    background: rgba(16, 185, 129, 0.2) !important;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.25) !important;
+}
+
+.trans-modal.income .trans-modal-footer {
+    border-top: 1px solid rgba(16, 185, 129, 0.15) !important;
+}
+
+/* =========================================
+   🌹 EXPENSE MODAL - ROSE THEME (#f43f5e)
+   ========================================= */
+.trans-modal.expense {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 40px rgba(244, 63, 94, 0.15) !important;
+}
+
+.trans-modal.expense .trans-modal-header {
+    background: rgba(244, 63, 94, 0.12) !important;
+    border-bottom: 1px solid rgba(244, 63, 94, 0.25) !important;
+}
+
+.trans-modal.expense .trans-title-icon {
+    color: #f43f5e !important;
+    text-shadow: 0 0 15px rgba(244, 63, 94, 0.4) !important;
+}
+
+.trans-modal.expense .trans-field label {
+    color: #f43f5e !important;
+}
+
+.trans-modal.expense .trans-type-tab.active {
+    background: rgba(244, 63, 94, 0.15) !important;
+    border-color: #f43f5e !important;
+    color: #f43f5e !important;
+}
+
+.trans-modal.expense .trans-input:focus,
+.trans-modal.expense .trans-textarea:focus {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15) !important;
+}
+
+.trans-modal.expense .trans-amount-box:focus-within,
+.trans-modal.expense .trans-input-group:focus-within {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.12) !important;
+}
+
+.trans-modal.expense .trans-payment-btn input:checked+span {
+    background: rgba(244, 63, 94, 0.2) !important;
+    color: #f43f5e !important;
+    border: 1px solid rgba(244, 63, 94, 0.3) !important;
+}
+
+.trans-modal.expense .trans-footer-btn {
+    border: 1px solid rgba(244, 63, 94, 0.25) !important;
+    background: rgba(244, 63, 94, 0.1) !important;
+}
+
+.trans-modal.expense .trans-footer-btn:hover {
+    background: rgba(244, 63, 94, 0.2) !important;
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.25) !important;
+}
+
+.trans-modal.expense .trans-modal-footer {
+    border-top: 1px solid rgba(244, 63, 94, 0.15) !important;
+}
+
+/* =========================================
+   🟡 ADVANCE MODAL - AMBER THEME (#f59e0b)
+   ========================================= */
+.trans-modal.advance {
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.15) !important;
+}
+
+.trans-modal.advance .trans-modal-header {
+    background: rgba(245, 158, 11, 0.12) !important;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.25) !important;
+}
+
+.trans-modal.advance .trans-title-icon {
+    color: #f59e0b !important;
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.4) !important;
+}
+
+.trans-modal.advance .trans-field label {
+    color: #f59e0b !important;
+}
+
+.trans-modal.advance .trans-type-tab.active {
+    background: rgba(245, 158, 11, 0.15) !important;
+    border-color: #f59e0b !important;
+    color: #f59e0b !important;
+}
+
+.trans-modal.advance .trans-input:focus,
+.trans-modal.advance .trans-textarea:focus {
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15) !important;
+}
+
+.trans-modal.advance .trans-amount-box:focus-within,
+.trans-modal.advance .trans-input-group:focus-within {
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.12) !important;
+}
+
+.trans-modal.advance .trans-payment-btn input:checked+span {
+    background: rgba(245, 158, 11, 0.2) !important;
+    color: #f59e0b !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.trans-modal.advance .trans-footer-btn {
+    border: 1px solid rgba(245, 158, 11, 0.25) !important;
+    background: rgba(245, 158, 11, 0.1) !important;
+}
+
+.trans-modal.advance .trans-footer-btn:hover {
+    background: rgba(245, 158, 11, 0.2) !important;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.25) !important;
+}
+
+.trans-modal.advance .trans-modal-footer {
+
+    border-top: 1px solid rgba(245, 158, 11, 0.15) !important;
+}
+
+/* Glass Modal Close Button Fix */
+.glass-modal-close {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.glass-modal-close:hover {
+    background: rgba(244, 63, 94, 0.2);
+    border-color: #f43f5e;
+    color: #f43f5e;
+    transform: rotate(90deg);
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+}

@@ -1,0 +1,303 @@
+/* Glass Confirm Modal Styles */
+.glass-modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    /* Removed !important */
+    /* Lowered from 999999 to allow popups on top */
+    display: none;
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glass-modal-overlay.show {
+    opacity: 1 !important;
+}
+
+.glass-modal-container {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 0;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.15);
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.glass-modal-overlay.show .glass-modal-container {
+    transform: scale(1);
+}
+
+.glass-modal-header {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.glass-modal-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(0, 212, 255, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.glass-modal-icon-wrapper.danger {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+}
+
+.glass-modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+}
+
+.glass-modal-body {
+    padding: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+}
+
+.glass-modal-footer {
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.glass-btn {
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.glass-btn.cancel {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-btn.cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.glass-btn.confirm {
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.glass-btn.confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+}
+
+.glass-btn.confirm.danger {
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.glass-btn.confirm.danger:hover {
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* =========================================
+   Glass Form Styles (Added for Clients Modal)
+   ========================================= */
+.form-group-neon {
+    margin-bottom: 20px;
+    text-align: right;
+    position: relative;
+}
+
+.form-group-neon label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.glass-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px;
+    color: #fff !important;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: #a855f7 !important;
+    background: rgba(168, 85, 247, 0.05) !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Select Option Styling */
+.glass-input option {
+    background: #1e293b;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Picker Button (Glass Style) */
+button.glass-input {
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+button.glass-input:hover {
+    border-color: rgba(168, 85, 247, 0.5) !important;
+}
+
+/* =========================================
+   Switch Toggle Styles (High Contrast)
+   ========================================= */
+.switch {
+    display: inline-block;
+    width: 46px;
+    /* Slightly larger for visibility */
+    height: 24px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Inactive: Light Grey */
+    transition: .3s;
+    border-radius: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #cbd5e1;
+    /* Inactive Dot: Grey-ish White */
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Checked State (Active) */
+.switch input:checked+.slider {
+    background-color: #2ecc71;
+    /* Bright Neon Green */
+    border-color: #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+    /* Strong Glow */
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(22px);
+    background-color: #fff;
+    /* Active Dot: Pure White */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.switch input:focus+.slider {
+    box-shadow: 0 0 1px #2ecc71;
+}
+
+/* =========================================
+   Glass Modal Close Button
+   ========================================= */
+.glass-modal-close {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    padding: 0;
+    margin-right: auto;
+    /* Push to the left in RTL */
+    font-size: 1rem;
+}
+
+.glass-modal-close:hover {
+    background: rgba(244, 63, 94, 0.2);
+    border-color: #f43f5e;
+    color: #f43f5e;
+    transform: rotate(90deg);
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+}
+
+.glass-modal-close:active {
+    transform: rotate(90deg) scale(0.95);
+}
