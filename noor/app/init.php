@@ -61,10 +61,17 @@ set_exception_handler(function($exception) {
 \App\Core\Session::start();
 
 // 5. Centralized Security Headers
-header('X-Frame-Options: SAMEORIGIN', true);
-header('X-Content-Type-Options: nosniff', true);
-header('X-XSS-Protection: 1; mode=block', true);
-header('Referrer-Policy: strict-origin-when-cross-origin', true);
-header('Permissions-Policy: geolocation=(), microphone=(), camera=()', true);
-// Modern Clickjacking Protection
-header("Content-Security-Policy: frame-ancestors 'self';", true);
+if (!headers_sent()) {
+    $securityHeaders = [
+        'X-Frame-Options' => 'DENY',
+        'X-Content-Type-Options' => 'nosniff',
+        'X-XSS-Protection' => '1; mode=block',
+        'Referrer-Policy' => 'strict-origin-when-cross-origin',
+        'Permissions-Policy' => 'geolocation=(), microphone=(), camera=()',
+        'Content-Security-Policy' => "frame-ancestors 'none';"
+    ];
+
+    foreach ($securityHeaders as $key => $value) {
+        header("$key: $value");
+    }
+}
