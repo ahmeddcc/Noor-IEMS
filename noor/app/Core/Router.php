@@ -65,7 +65,7 @@ class Router {
              if (method_exists($controllerInfo, $defaultAction)) {
                 $controllerInfo->$defaultAction();
             } else {
-                die("Action '$methodName' not found in $controllerName");
+                die("Action '" . htmlspecialchars($methodName) . "' not found in " . htmlspecialchars($controllerName));
             }
         }
     }
