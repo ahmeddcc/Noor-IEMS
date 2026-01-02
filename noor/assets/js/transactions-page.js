@@ -187,7 +187,19 @@ function setupClientAutosuggest() {
                     data.forEach(client => {
                         const item = document.createElement('div');
                         item.className = 'suggestion-item';
-                        item.innerHTML = `<span>${client.name}</span> <span style="opacity:0.6;font-size:0.8em">${client.category_name || ''}</span>`;
+
+                        const nameSpan = document.createElement('span');
+                        nameSpan.textContent = client.name;
+
+                        const categorySpan = document.createElement('span');
+                        categorySpan.style.opacity = '0.6';
+                        categorySpan.style.fontSize = '0.8em';
+                        categorySpan.textContent = client.category_name || '';
+
+                        item.appendChild(nameSpan);
+                        item.appendChild(document.createTextNode(' '));
+                        item.appendChild(categorySpan);
+
                         item.onclick = () => selectSmartClient(client);
                         suggestionsBox.appendChild(item);
                     });
@@ -573,15 +585,26 @@ function createClientCard(client) {
     div.className = 'client-card-modern';
     div.onclick = () => selectClientFromBrowse(client);
 
-    div.innerHTML = `
-            <div class="client-avatar av-${(client.id % 5) + 1}">
-                ${client.name.charAt(0)}
-            </div>
-            <div class="client-info-modern">
-                <div class="client-name-modern">${client.name}</div>
-                <div class="client-phone-modern">${client.phone || ''}</div>
-            </div>
-        `;
+    const avatar = document.createElement('div');
+    avatar.className = `client-avatar av-${(client.id % 5) + 1}`;
+    avatar.textContent = client.name.charAt(0);
+
+    const info = document.createElement('div');
+    info.className = 'client-info-modern';
+
+    const nameDiv = document.createElement('div');
+    nameDiv.className = 'client-name-modern';
+    nameDiv.textContent = client.name;
+
+    const phoneDiv = document.createElement('div');
+    phoneDiv.className = 'client-phone-modern';
+    phoneDiv.textContent = client.phone || '';
+
+    info.appendChild(nameDiv);
+    info.appendChild(phoneDiv);
+
+    div.appendChild(avatar);
+    div.appendChild(info);
     return div;
 }
 
