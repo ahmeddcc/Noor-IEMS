@@ -185,7 +185,18 @@ async function saveClient(event) {
                 closeClientModal();
                 if (returnUrl) {
                     sessionStorage.removeItem('clientReturnUrl');
-                    window.location.href = returnUrl;
+                    // Security Check: Prevent Open Redirect
+                    try {
+                        const url = new URL(returnUrl, window.location.origin);
+                        if (url.origin === window.location.origin) {
+                            window.location.href = url.href;
+                        } else {
+                            console.warn('Blocked potential open redirect:', returnUrl);
+                            window.location.reload();
+                        }
+                    } catch (e) {
+                        window.location.reload();
+                    }
                 } else {
                     window.location.reload();
                 }
