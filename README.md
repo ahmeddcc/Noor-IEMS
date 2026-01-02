@@ -220,7 +220,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For questions and support:
-- 📧 Email: support@example.com
+- 📧 Email: ahmeddcc@gmail.com
 - 💬 Telegram: @example
 
 ---
