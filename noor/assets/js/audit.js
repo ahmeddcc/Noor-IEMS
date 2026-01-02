@@ -116,10 +116,16 @@ function showToast(message, type = 'success') {
     if (type === 'error') icon = 'fa-times-circle';
     if (type === 'info') icon = 'fa-info-circle';
 
-    toast.innerHTML = `
-        <i class="fas ${icon}"></i>
-        <div class="toast-message">${message}</div>
-    `;
+    // Safe DOM Creation
+    const iconEl = document.createElement('i');
+    iconEl.className = `fas ${icon}`;
+
+    const messageEl = document.createElement('div');
+    messageEl.className = 'toast-message';
+    messageEl.textContent = message;
+
+    toast.appendChild(iconEl);
+    toast.appendChild(messageEl);
 
     // Append to container
     container.appendChild(toast);
