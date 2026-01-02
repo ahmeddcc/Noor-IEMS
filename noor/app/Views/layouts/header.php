@@ -1,13 +1,6 @@
 <?php if (!defined('ROOT_PATH')) exit; 
 
-// ===== Security Headers =====
-header('X-Frame-Options: DENY'); // منع تضمين الصفحة في iframe
-header('X-Content-Type-Options: nosniff'); // منع MIME-type sniffing
-header('X-XSS-Protection: 1; mode=block'); // تفعيل حماية XSS
-header('Referrer-Policy: strict-origin-when-cross-origin'); // سياسة الإحالة
-header('Permissions-Policy: geolocation=(), microphone=(), camera=()'); // تقييد الصلاحيات
-// header('Strict-Transport-Security: max-age=31536000; includeSubDomains'); // تفعيل عند استخدام HTTPS
-// ============================= 
+// Security Headers moved to app/init.php 
 if (!function_exists('toArabicNum')) {
     function toArabicNum($number) {
         $western = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
