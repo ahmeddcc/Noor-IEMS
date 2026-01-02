@@ -61,10 +61,10 @@ set_exception_handler(function($exception) {
 \App\Core\Session::start();
 
 // 5. Centralized Security Headers
-header('X-Frame-Options: DENY');
-header('X-Content-Type-Options: nosniff');
-header('X-XSS-Protection: 1; mode=block');
-header('Referrer-Policy: strict-origin-when-cross-origin');
-header('Permissions-Policy: geolocation=(), microphone=(), camera=()');
+header('X-Frame-Options: SAMEORIGIN', true);
+header('X-Content-Type-Options: nosniff', true);
+header('X-XSS-Protection: 1; mode=block', true);
+header('Referrer-Policy: strict-origin-when-cross-origin', true);
+header('Permissions-Policy: geolocation=(), microphone=(), camera=()', true);
 // Modern Clickjacking Protection
-header("Content-Security-Policy: frame-ancestors 'none';");
+header("Content-Security-Policy: frame-ancestors 'self';", true);
