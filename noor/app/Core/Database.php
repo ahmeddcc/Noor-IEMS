@@ -24,7 +24,8 @@ class Database {
             $this->pdo->exec("PRAGMA foreign_keys = ON;"); // تفعيل المفاتيح الأجنبية
 
         } catch (\PDOException $e) {
-            die("خطأ في الاتصال بقاعدة البيانات: " . $e->getMessage());
+            error_log("Database Connection Error: " . $e->getMessage());
+            die("نأسف، حدث خطأ في الاتصال بقاعدة البيانات. يرجى المحاولة لاحقاً.");
         }
     }
 
